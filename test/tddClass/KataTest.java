@@ -120,4 +120,25 @@ public class KataTest {
         }
 
     }
+    @Test
+    public void evenOrOddNumber(){
+        Kata user = new Kata();
+        boolean result = user.isEven(8);
+        assertEquals(true, result);
+    }
+    @Test
+    public void largestNumber(){
+        Kata user = new Kata();
+        int result = user.isLargest(23,97,66,88,45);
+        assertEquals(97,result);
+    }
+
+    @Test
+    public void largestNumber2(){
+        Kata user = new Kata();
+        int result = user.isLargestNumber(23,97,66,88,45);
+        assertEquals(97,result);
+    }
+
+
 }
