@@ -84,13 +84,48 @@ public class Kata {
         }
         return num5;
     }
-    public int isLargestNumber(int num1, int num2, int num3, int num4, int num5){
+
+    public int isLargestNumber(int num1, int num2, int num3, int num4, int num5) {
         int largest = num1;
-        if(num2 > largest){largest = num2;}
-        if (num3 > largest){largest = num3;}
-        if (num4 > largest){largest = num4;}
-        if (num5 > largest){largest = num5;}
+        if (num2 > largest) {
+            largest = num2;
+        }
+        if (num3 > largest) {
+            largest = num3;
+        }
+        if (num4 > largest) {
+            largest = num4;
+        }
+        if (num5 > largest) {
+            largest = num5;
+        }
         return largest;
 
+    }
+
+    public int isNumberOfFactor(int number) {
+        int num = 1;
+        int count = 0;
+        for (num = 1; num <= number; num++) {
+            if (number % num == 0) count++;
+        }
+        return count;
+//        int num = 1;
+//        int count = 1;
+//        while(num <= number){num++; if(number % num == 0){count++;}}return count;
+
+
+    }
+
+    public boolean primeNumber(int number) {
+        int num = 1;
+        int count = 0;
+        for (num = 1; num <= number; num++) {
+            if (number % num == 0) count++;
+        }
+        if (count == 2)
+            return true;
+
+        return false;
     }
 }

@@ -139,6 +139,19 @@ public class KataTest {
         int result = user.isLargestNumber(23,97,66,88,45);
         assertEquals(97,result);
     }
+    @Test
+    public void numberOfFactorsTest(){
+        Kata user = new Kata();
+        int result = user.isNumberOfFactor(30);
+        assertEquals(8, result);
+    }
+
+    @Test
+    public void primeNumberTest(){
+        Kata user = new Kata();
+        boolean result = user.primeNumber(13);
+        assertEquals(true, result);
+    }
 
 
 }
