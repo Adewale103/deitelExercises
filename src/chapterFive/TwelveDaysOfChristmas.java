@@ -4,25 +4,23 @@ import java.util.Scanner;
 
 public class TwelveDaysOfChristmas {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter any day from 1 to 12, enter 13 to stop:");
-        int day = input.nextInt();
 
-        while(day>0 && day<=12) {
+         for(int day = 1; day<=12; day++){System.out.print("On the ");
             switch (day) {
-                case 1 -> System.out.println("On the first day of Christmas my true love sent to me ");
-                case 2 -> System.out.println("On the second day of Christmas my true love sent to me ");
-                case 3 -> System.out.println("On the third day of Christmas my true love sent to me ");
-                case 4 -> System.out.println("On the fourth day of Christmas my true love sent to me ");
-                case 5 -> System.out.println("On the fifth day of Christmas my true love sent to me ");
-                case 6 -> System.out.println("On the sixth day of Christmas my true love sent to me ");
-                case 7 -> System.out.println("On the seventh day of Christmas my true love sent to me ");
-                case 8 -> System.out.println("On the eight day of Christmas my true love sent to me ");
-                case 9 -> System.out.println("On the ninth day of Christmas my true love sent to me ");
-                case 10 -> System.out.println("On the tenth day of Christmas my true love sent to me ");
-                case 11 -> System.out.println("On the eleventh day of Christmas my true love sent to me ");
-                case 12 -> System.out.println("On the twelfth day of Christmas my true love sent to me ");
+                case 1 -> System.out.print("first day ");
+                case 2 -> System.out.print("second day ");
+                case 3 -> System.out.print("third day ");
+                case 4 -> System.out.print("fourth day ");
+                case 5 -> System.out.print("fifth day  ");
+                case 6 -> System.out.print("sixth day ");
+                case 7 -> System.out.print("seventh day ");
+                case 8 -> System.out.print("eight day  ");
+                case 9 -> System.out.print("ninth day ");
+                case 10 -> System.out.print("tenth day ");
+                case 11 -> System.out.print("eleventh day ");
+                case 12 -> System.out.print("the twelfth day ");
             }
+            System.out.println("of Christmas my true love sent to me ");
             switch (day) {
                 case 12:
                     System.out.println("Twelve drummers drumming");
@@ -45,14 +43,13 @@ public class TwelveDaysOfChristmas {
                 case 3:
                     System.out.println("Three french hens ");
                 case 2:
-                    System.out.println("Two turtle doves ");
+                    System.out.print("Two turtle doves ");
+                    System.out.println("and");
                 case 1:
-                    System.out.println("A partridge in a pear tree ");
+                    System.out.println("a partridge in a pear tree ");
                     break;
             }
-
-            System.out.print("Enter any day from 1 to 12, enter 13 to stop:");
-            day = input.nextInt();
+             System.out.println("*******************************************************************************************");
+         }
         }
-    }
 }

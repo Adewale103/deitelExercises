@@ -1,43 +1,69 @@
 package chapterFive;
 
+import java.util.Scanner;
+
 public class TrianglePrinting {
     public static void main(String[] args) {
+        for (int r = 1; r <= 11; r++) {
+            for (int c = 1; c <= r; c++) {
+                System.out.print("* ");
+            }
+            for (int c = r; c <= 11; c++) {
+                System.out.print("  ");
+            }
+            for (int c = r; c <= 11; c++) {
+                System.out.print("* ");
+            }
+            for (int c = 1; c <= r; c++) {
+                System.out.print("  ");
+            }
+            for (int c = 1; c <= r; c++) {
+                System.out.print("  ");
+            }
+            for (int c = r; c <= 11; c++) {
+                System.out.print("* ");
+            }
+            for (int c = r; c <= 11; c++) {
+                System.out.print("  ");
+            }
+            for (int c = 1; c <= r; c++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for (int r = 1; r <= 11; r++) {
+            for (int c = 1; c <= r; c++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for (int r = 1; r <= 11; r++) {
+            for (int c = r; c <= 11; c++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for (int r = 1; r <= 11; r++) {
+            for (int c = r; c <= 11; c++) {
+                System.out.print("  ");
+            }
+            for (int c = 1; c<=r; c++){
+            System.out.print("* ");}
+            System.out.println();
+        }
+        System.out.println();
+        for (int r = 1; r <= 11; r++) {
+            for (int c = 1; c <= r; c++) {
+                System.out.print("  ");
+            }
+            for (int c = r; c<=11; c++){
+                System.out.print("* ");}
+            System.out.println();
+        }
 
-        for (int row = 1; row <= 11; row++) {
-            for (int column = 1; column <= row; column++) {
-                System.out.print(" *");
-            }
-            System.out.println();
-        }
-        System.out.println();
-        for (int row = 11; row >= 1; row--) {
-            for (int column = 1; column <= row; column++) {
-                System.out.print(" *");
-            }
-            System.out.println();
-        }
-        System.out.println();
-        for (int row = 11; row >= 1; row--) {
-            for (int column = 1; column <= 11 - row; column++) {
-                System.out.print("  ");
-            }
-            for (int k = 1; k <= row; k++) {
-                System.out.print("* ");
-            }
-            System.out.println();
-        }
-        System.out.println();
-        for (int row = 1; row <= 11; row++) {
-            for (int column = 1; column <= 11 - row; column++) {
-                System.out.print("  ");
-            }
-            for (int k = 1; k <= row; k++) {
-                System.out.print("* ");
-            }
-            System.out.println();
-        }
-        System.out.println();
 
     }
 }
-

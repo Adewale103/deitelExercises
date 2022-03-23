@@ -18,4 +18,5 @@ public class FindTheLargestNumber {
         }
         System.out.println("The largest number is "+largest);
     }
+
 }

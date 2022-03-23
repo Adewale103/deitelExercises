@@ -7,8 +7,8 @@ public class Factorial {
         // Scanner input = new Scanner(System.in);
         // System.out.println("Enter any number; ");
         //int num = input.nextInt();
-        for(int k = 1; k<=12;k++) {
-            for (int n = 1; n <= 12; n++) {
+        for(int k = 1; k<=10;k++) {
+            for (int n = 11; n <= 19; n++) {
                 int multiply = k * n;
                 System.out.printf("%d * %d = %d%n",k, n, multiply);
             }
