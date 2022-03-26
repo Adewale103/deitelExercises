@@ -1,4 +1,4 @@
-package Personal;
+package Assignments;
 
 import java.util.Scanner;
 

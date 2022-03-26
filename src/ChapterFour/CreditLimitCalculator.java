@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CreditLimitCalculator {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter account number (press -1 to exit)");
+        System.out.println("Enter account number");
         int acctNumber = input.nextInt();
 
         System.out.println("Enter the beginning balance");
