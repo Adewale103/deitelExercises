@@ -1,6 +1,6 @@
 package chapterTwo;
 
-//To show the world's current population and the thrend for the next five years;
+//To show the world's current population and the trend for the next five years;
 public class PopulationGrowthCalculator {
 	public static void main(String[] args) {
 
