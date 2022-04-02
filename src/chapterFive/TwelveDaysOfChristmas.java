@@ -1,7 +1,5 @@
 package chapterFive;
 
-import java.util.Scanner;
-
 public class TwelveDaysOfChristmas {
     public static void main(String[] args) {
 

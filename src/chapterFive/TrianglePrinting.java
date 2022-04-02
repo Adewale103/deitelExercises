@@ -1,6 +1,5 @@
 package chapterFive;
 
-import java.util.Scanner;
 
 public class TrianglePrinting {
     public static void main(String[] args) {

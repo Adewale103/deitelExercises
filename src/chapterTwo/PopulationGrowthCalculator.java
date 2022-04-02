@@ -5,7 +5,7 @@ public class PopulationGrowthCalculator {
 	public static void main(String[] args) {
 
 		double currentPop = 7953952567.0;
-		double growthRate = 0.001;
+		double growthRate = 0.01;
 
 		double onePop = ((7953952567.0 * growthRate) + 7953952567.0);
 		double secondPop = ((onePop * growthRate) + onePop);

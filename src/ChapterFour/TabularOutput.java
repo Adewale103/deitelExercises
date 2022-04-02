@@ -9,6 +9,6 @@ public class TabularOutput {
             int N2 = i*i;
             int N3 = i*i*i;
             int N4 = i*i*i*i;
-            System.out.printf("%d    %d     %d     %d%n",N,N2,N3,N4);}
+            System.out.printf("%d%5d%6d%6d%n",N,N2,N3,N4);}
     }
 }

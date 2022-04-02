@@ -18,9 +18,9 @@ public class ModifiedAccount {
     }
 
     public void withdraw(double amountWithdrew) {
-        if (amountWithdrew > balance) {System.out.println("Withdrawal amount exceeded account balance");
+        if (amountWithdrew > balance) {System.out.println("Withdrawal amount exceeded your current account balance!");
     }
-        if (amountWithdrew < balance && amountWithdrew > 0) {
+        if (amountWithdrew <= balance && amountWithdrew > 0) {
             balance = balance - amountWithdrew;
         }
 
