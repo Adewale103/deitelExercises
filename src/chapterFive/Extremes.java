@@ -6,20 +6,21 @@ public class Extremes {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int counter = 1;
-        int number2 = 0;
-        int secondMaximum = 0;
+        int minimum;
         int maximum = 0;
-        System.out.println("Welcome, Enter 10 numbers");
-        while (counter <= 10) {
-            System.out.println("input number : ");
-            int number = input.nextInt();
+        System.out.println("Enter first number");
+        int number = input.nextInt();
+        minimum = number;
+        while (counter <= 9) {
+            System.out.println("Enter other number: ");
+            number = input.nextInt();
+            if (number < minimum) {
+                minimum = number;
+         }
             if (number > maximum) {
                 maximum = number;
-            }
-            if (number > secondMaximum && number < maximum) {
-                secondMaximum = number;
-            }
-            System.out.printf("The sum of the maximum and second largest number is %d and %d", maximum, secondMaximum);
+            }counter++;
         }
+        System.out.printf("The sum of the maximum and second largest number is %d and %d", maximum, minimum);
     }
 }

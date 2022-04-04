@@ -1,10 +1,14 @@
 package Personal;
 
 import java.security.SecureRandom;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class InfiniteLoopFor {
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] arrays = new int[10];
+
 //        int count = 1;
 //
 //        for (; ; count++) {

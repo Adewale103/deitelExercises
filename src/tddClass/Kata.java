@@ -3,6 +3,34 @@ package tddClass;
 public class Kata {
 
 
+    public static int findMaximumFrom(int[] scores) {
+        int maximum = 0;
+        int count = 0;
+        while (count < scores.length){
+            if
+        (scores[count] > maximum){maximum = scores[count];} count++;}
+        return maximum;
+    }
+
+    public static int findMinimumFrom(int[] scores) {
+        int minimum = scores[0];
+        int count = 1;
+        while (count < scores.length){
+            if
+            (scores[count] < minimum){minimum = scores[count];} count++;}
+        return minimum;
+    }
+
+    public static double findAverageFrom(int[] scores) {
+        int sum = 0;
+        double average = 0;
+        int count = 0;
+        while (count < scores.length){
+           sum = sum + scores[count]; count++;
+        average = sum/ scores.length;}
+        return average;
+    }
+
     public int add(int firstNumber, int secondNumber) {
         return firstNumber + secondNumber;
     }

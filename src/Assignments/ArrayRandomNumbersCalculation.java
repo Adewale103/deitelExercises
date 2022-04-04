@@ -5,15 +5,10 @@ import java.security.SecureRandom;
 public class ArrayRandomNumbersCalculation {
     public static void main(String[] args) {
         SecureRandom random = new SecureRandom();
-        int[] array = new int[10];
+        int[] array = {34,56,89,16,51,22,76,38,90,12};
         int largest = 0;
         int sum = 0;
-        int count = 0;
         double average;
-        while(count < 10){
-            array[count] = random.nextInt(101);
-            count++;
-        }
         for(int i = 0; i < array.length; i++){
             System.out.print(array[i]+" ");
         }
@@ -27,6 +22,7 @@ public class ArrayRandomNumbersCalculation {
         for(int i = 0; i < array.length; i++ ){
             sum = sum + array[i];
         }
+        System.out.println("The sum of the numbers is "+sum);
         average = (double)sum/array.length;
         System.out.printf("The average of the numbers is approximately %.2f ",average);
     }
