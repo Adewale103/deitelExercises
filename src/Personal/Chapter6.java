@@ -3,8 +3,7 @@ package Personal;
 import java.security.SecureRandom;
 import java.util.Random;
 
-public class
-Chapter6 {
+public class Chapter6 {
     public final static int Constant = 67;
 
 

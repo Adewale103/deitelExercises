@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class InfiniteLoopFor {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int[] arrays = new int[10];
 
 //        int count = 1;
 //
@@ -23,7 +22,6 @@ public class InfiniteLoopFor {
 //            System.out.println("Asherflo");
 //            count = random.nextInt(7);
         int count = 0;
-        Scanner input = new Scanner(System.in);
         for(;count<=100;){
             System.out.println("Enter a score and enter any number above 100 to end");
             count = input.nextInt();

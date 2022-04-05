@@ -10,6 +10,12 @@ public class ModifiedAccount {
             this.balance = balance;
         }
     }
+    public ModifiedAccount(){
+        this("No name",0.0);
+    }
+    public ModifiedAccount(double balance){
+        this("Wale",balance);
+    }
 
     public void deposit(double amountDeposit) {
         if (amountDeposit > 0.0) {

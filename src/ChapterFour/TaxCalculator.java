@@ -7,7 +7,6 @@ public class TaxCalculator {
         Scanner input = new Scanner(System.in);
         int count = 1;
 
-        //for(int i =1; i<=3; i++){
         while (count <=3){
             System.out.println("Enter your name: ");
             String name = input.nextLine();
