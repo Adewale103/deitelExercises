@@ -50,6 +50,13 @@ public class diceGameTest {
         assertEquals("lose",player.getStatus());
     }
     @Test
+    public void sumAtSecondRollIsNotSameAsSumAtFirstRollTest(){
+        player.rollDice(3,1);
+        assertEquals(4,player.getPoints());
+        player.subsequentRollTest(2,3);
+        assertEquals("try again",player.getStatus());
+    }
+    @Test
     public void sumAtSecondRollIsSameAsSumAtFirstRollTest(){
         player.rollDice(3,1);
         assertEquals(4,player.getPoints());

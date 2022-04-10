@@ -33,6 +33,7 @@ public class diceGame {
                 status = "lose";
                 break;
             }
+            else status = "try again";
             count++;
         } }
 }
