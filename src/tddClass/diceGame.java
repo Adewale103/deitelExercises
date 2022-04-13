@@ -19,9 +19,8 @@ public class diceGame {
         } else if ((dice1 + dice2 == 2) || (dice1 + dice2 == 3) || (dice1 + dice2 == 12)) {
             status = "lose";
         } else if ((dice1 + dice2 == 4) || (dice1 + dice2 == 5) || (dice1 + dice2 == 6) || (dice1 + dice2 == 8) || (dice1 + dice2 == 9) || (dice1 + dice2 == 10)) {
+            status= "roll again";
             points = dice1 + dice2;
-            subsequentRollTest(dice1,dice2);
-
         }
     }
     public void subsequentRollTest(int dice1, int dice2) {
@@ -33,7 +32,7 @@ public class diceGame {
                 status = "lose";
                 break;
             }
-            else status = "try again";
+            else status = "roll again";
             count++;
         } }
 }
