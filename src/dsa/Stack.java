@@ -5,7 +5,8 @@ public class Stack {
     int[] elements = new int[10];
 
     public boolean isEmpty() {
-        return numberOfElements == 0;
+        if (numberOfElements == 0) return true;
+        else return false;
     }
 
     public void push(int element) {

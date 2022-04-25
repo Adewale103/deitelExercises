@@ -3,19 +3,35 @@ package chapterSix;
 import java.util.Scanner;
 
 public class BeautifyingStrings {
+    private static Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the String: ");
-        String string = input.nextLine();
-        checkIfFullStop(string);
-
+        beautifyingString();
     }
-    public static void checkIfFullStop(String string){
-        if (string.charAt(string.length()-1) != '.' ){
-            string = string + '.';
-            System.out.println(string);
+
+
+
+
+
+
+
+
+    public static void beautifyingString(){
+        System.out.println("Enter any phrase or sentence: ");
+        String theString = input.nextLine();
+
+        if(theString.charAt(theString.length()-1) != '.'){
+            theString = theString + '.';
         }
-        else System.out.println(string);
+
+        char firstDigit = theString.toUpperCase().charAt(0);
+        System.out.print(firstDigit);
+
+        for (int i = 1; i < theString.length(); i++) {
+            System.out.print(theString.charAt(i));
+        }
+
     }
 
 }
+
+
