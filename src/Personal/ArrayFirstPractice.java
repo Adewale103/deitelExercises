@@ -19,8 +19,4 @@ public class ArrayFirstPractice {
             System.out.println();
         }
     }
-
-
 }
-
-
