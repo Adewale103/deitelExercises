@@ -14,7 +14,7 @@ public class Diary {
         this.password = password;
     }
 
-    public void setPassword(String password) {
+    public void changePassword(String password) {
         this.password = password;
     }
 
@@ -25,14 +25,6 @@ public class Diary {
 
     public void addEntry(Entry entry) {
         entries.add(entry);
-    }
-
-    public String getDairyName() {
-        return dairyName;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public int getNumberOfEntries() {
@@ -111,7 +103,8 @@ public class Diary {
         }
     }
     public boolean validatePassword(String password){
-        return password.equals(getPassword());
+
+        return this.password.equals(password);
     }
 
 }

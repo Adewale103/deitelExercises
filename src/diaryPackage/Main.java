@@ -62,7 +62,7 @@ public class Main {
                 System.out.println("Enter new password: ");
                 String newPassword = input.nextLine();
 
-                diary.setPassword(newPassword);
+                diary.changePassword(newPassword);
                 System.out.println("Password successfully changed... ");
             } else System.out.println("Incorrect password..");
         }
