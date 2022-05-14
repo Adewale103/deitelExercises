@@ -11,7 +11,7 @@ public class Stack {
 
     public void push(int element) {
         elements[numberOfElements] = element;
-        numberOfElements +=1;
+        numberOfElements++;
     }
 
     public int pop() {
@@ -20,6 +20,6 @@ public class Stack {
     }
 
     public int peek() {
-        return elements[numberOfElements-1];
+        return elements[numberOfElements--];
     }
 }

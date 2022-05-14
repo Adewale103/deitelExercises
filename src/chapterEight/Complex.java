@@ -3,8 +3,8 @@ package chapterEight;
 
 public class Complex {
     private static final String i = "i";
-    private double realPart;
-    private double imaginaryPart;
+    private final double realPart;
+    private final double imaginaryPart;
 
     public Complex(double realPart,double imaginaryPart){
         this.realPart = realPart;

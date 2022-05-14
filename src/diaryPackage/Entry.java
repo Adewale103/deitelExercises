@@ -37,7 +37,7 @@ public class Entry {
                Body:
                %s
                
-               ***********************************************""",getDate(),getTitle(),getBody());
+               ********************************************""",getDate(),getTitle(),getBody());
     }
 
 }
