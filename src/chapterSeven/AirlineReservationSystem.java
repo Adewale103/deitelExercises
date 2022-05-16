@@ -29,7 +29,7 @@ public class AirlineReservationSystem {
         }
         else {
             System.out.println("oops! First class section is fully booked");
-            System.out.println("Would you mind reserving a seat in economy class?");
+            System.out.println("Would it be ok reserving a seat in economy class?");
             System.out.println("(Type Yes or No)");
             input.nextLine();
             String option = input.nextLine();
@@ -69,7 +69,7 @@ public class AirlineReservationSystem {
         }
         else {
             System.out.println("oops! Economy section is fully booked");
-            System.out.println("Would you mind reserving a seat in first class?");
+            System.out.println("Would it be ok reserving a seat in first class?");
             System.out.println("(Type Yes or No)");
             input.nextLine();
             String option = input.nextLine();
