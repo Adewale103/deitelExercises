@@ -7,4 +7,8 @@ public class VehicleLoan extends Loan{
         super(principal,loanTenure);
         this.rate = 1.90;
     }
+    @Override
+    public double getRate() {
+        return rate;
+    }
 }

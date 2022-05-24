@@ -7,6 +7,10 @@ public class HomeLoan extends Loan {
         super(principal,loanTenure);
         this.rate = 0.23;
     }
+    @Override
+    public double getRate() {
+        return rate;
+    }
 
 
 }

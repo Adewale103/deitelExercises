@@ -67,10 +67,10 @@ public class MyersBriggsQuestionnaire {
                 (1)
                 A.-> expend energy, enjoy groups
                 B.-> conserve energy, enjoy one-on-one""");
-        String option1 = input.nextLine().toUpperCase();
-        if (option1.equals("A")) {
+        String option = input.nextLine().toUpperCase();
+        if (option.equals("A")) {
             countA1 += 1;
-        } else if (option1.equals("B")) {
+        } else if (option.equals("B")) {
             countB1 += 1;
         } else Question1();
     }

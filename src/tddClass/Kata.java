@@ -27,7 +27,7 @@ public class Kata {
         int count = 0;
         while (count < scores.length){
            sum = sum + scores[count]; count++;
-        average = sum/ scores.length;}
+        average = sum * 1.0/ scores.length;}
         return average;
     }
 
@@ -90,7 +90,7 @@ public class Kata {
     }
 
     public double quotient(int num1, int num2) {
-        return num1 / num2;
+        return num1*1.0 / num2;
     }
 
     public boolean isEven(int digit) {
@@ -156,4 +156,42 @@ public class Kata {
 
         return false;
     }
+
+    public static int findSumOfDistinctElements(int[] array1, int[]  array2) {
+        int sum = 0;
+        int a = computeSumForDistinct(array1, array2,sum);
+        int b = computeSumForDistinct(array2, array1,sum);
+        return a + b;
+    }
+    private static int computeSumForDistinct(int[] array1, int[] array2, int sum){
+        for (int i = 0; i < array1.length; i++) {
+            int counter = 0;
+            for (int j = 0; j < array2.length; j++) {
+                if(array1[i] != array2[j]){
+                    counter++;
+                }
+            }
+            if(counter == array2.length){
+                sum += array1[i];
+            }
+        }
+        return sum;
+    }
+
+    public static int findSumOfSameElements(int[] array1, int[] array2) {
+        int sum = 0;
+        for (int i = 0; i < array1.length; i++) {
+            int counter = 0;
+            for (int j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j]) {
+                    if(counter < 1){
+                    sum = sum + (array1[i] * 2);
+                    counter++;}
+                }
+            }
+        }
+        return sum;
+    }
+
+
 }

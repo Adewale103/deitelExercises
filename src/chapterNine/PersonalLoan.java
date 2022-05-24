@@ -7,4 +7,8 @@ public class PersonalLoan extends Loan {
         super(principal,loanTenure);
         this.rate = 0.15;
     }
+    @Override
+    public double getRate() {
+        return rate;
+    }
 }

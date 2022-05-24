@@ -13,7 +13,7 @@ public class Loan {
     }
 
     public double monthlyInstallation(){
-        return principal * loanTenure * rate;
+        return principal * rate/(12 * loanTenure);
     }
 
     public double getPrincipal() {

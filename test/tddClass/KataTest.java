@@ -124,7 +124,7 @@ public class KataTest {
     @Test
     public void primeNumberTest(){
         boolean result = calculator.primeNumber(13);
-        assertEquals(true, result);
+        assertTrue(result);
     }
     @Test
     public void maximumNumberInArray(){
@@ -139,6 +139,19 @@ public class KataTest {
     @Test
     public void averageInArray(){
         int[] scores = {34,23,14,45,23};
-        assertEquals(27,Kata.findAverageFrom(scores));
+        assertEquals(27.8,Kata.findAverageFrom(scores));
+    }
+    @Test
+    public void sumOfDistinctElementsInTwoArraysCanBeCalculatedTest(){
+        int[] array1 = {3,1,7,9};
+        int[] array2 = {2,4,1,9,3};
+        assertEquals(13,Kata.findSumOfDistinctElements(array1,array2));
+    }
+
+    @Test
+    public void sumOfSameElementsInTwoArraysCanBeCalculatedTest(){
+        int[] array1 = {12,13,6,10};
+        int[] array2 = {13,10,16,15};
+        assertEquals(46,Kata.findSumOfSameElements(array1,array2));
     }
 }

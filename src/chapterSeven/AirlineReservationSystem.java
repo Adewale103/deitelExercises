@@ -33,8 +33,8 @@ public class AirlineReservationSystem {
             System.out.println("(Type Yes or No)");
             input.nextLine();
             String option = input.nextLine();
-            if (option.toUpperCase().equals("YES")){fillEconomy();}
-            else if (option.toUpperCase().equals("NO")){
+            if (option.equalsIgnoreCase("YES")){fillEconomy();}
+            else if (option.equalsIgnoreCase("NO")){
                 System.out.println("Next flight leaves in 3 hours.");}
         }
 
@@ -73,8 +73,8 @@ public class AirlineReservationSystem {
             System.out.println("(Type Yes or No)");
             input.nextLine();
             String option = input.nextLine();
-            if (option.toUpperCase().equals("YES")){fillFirstClass();}
-            else if (option.toUpperCase().equals("NO")){
+            if (option.equalsIgnoreCase("YES")){fillFirstClass();}
+            else if (option.equalsIgnoreCase("NO")){
                 System.out.println("Next flight leaves in 3 hours.");}
         }
 

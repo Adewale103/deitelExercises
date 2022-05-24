@@ -68,8 +68,10 @@ public class ArrayListTest {
         assertEquals(7,list.size());
         assertEquals("Money for boyfriend",list.get(2));
 
+
        list.add(2,"Pocket money for sister");
        assertEquals("Pocket money for sister",list.get(2));
+       assertEquals("Aja for boyfriend", list.get(4));
        assertEquals("Money for boyfriend",list.get(3));
 
         assertEquals(8,list.size());
