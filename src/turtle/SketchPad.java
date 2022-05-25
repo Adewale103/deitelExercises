@@ -1,20 +1,25 @@
 package turtle;
 
 public class SketchPad {
-    private int[][] sketchBoard = new int[20][20];
-    private int row;
-    private int column;
+    private int[][] floor;
 
     public SketchPad(int row, int column) {
-        this.row = row;
-        this.column = column;
+       floor = new int[row][column];
+    }
+    @Override
+    public String toString(){
+        StringBuilder toBeReturned = new StringBuilder();
+        for (var row : floor) {
+            for (var column : row) {
+                if (column == 0) toBeReturned.append("  ");
+                if (column == 1) toBeReturned.append("* ");
+            }
+            toBeReturned.append("\n");
+        }
+        return toBeReturned.toString();
     }
 
-    public void fillSketchPad(int row, int column){
-        sketchBoard[row][column] = 1;
-    }
-
-    public int getSketchPad(int row, int column){
-        return sketchBoard[row][column];
+    public int[][] getFloor() {
+        return floor;
     }
 }

@@ -1,5 +1,7 @@
 package tddClass;
 
+import java.util.LinkedList;
+
 public class Kata {
 
 
@@ -193,5 +195,38 @@ public class Kata {
         return sum;
     }
 
+    public static int findSumOfDistinctElementsInLinkedList(LinkedList<Integer> linkedList1, LinkedList<Integer> linkedList2) {
+        int sum = 0;
+        for (int i = 0; i < linkedList2.size(); i++) {
+            if(!linkedList1.contains(linkedList2.get(i))){
+               sum = sum + linkedList2.get(i);
+            }
+        }
+        for (int i = 0; i < linkedList1.size(); i++) {
+            if(!linkedList2.contains(linkedList1.get(i))){
+                sum = sum + linkedList1.get(i);
+            }
+        }
+        return sum;
 
-}
+        }
+
+
+    public static int findSumOfSameElementsInLinkedList(LinkedList<Integer> linkedList1, LinkedList<Integer> linkedList2) {
+        int sum = 0;
+        for (int i = 0; i < linkedList2.size(); i++) {
+            if(linkedList1.contains(linkedList2.get(i))){
+                sum = sum + linkedList2.get(i);
+            }
+        }
+        for (int i = 0; i < linkedList1.size(); i++) {
+            if(linkedList2.contains(linkedList1.get(i))){
+                sum = sum + linkedList1.get(i);
+            }
+        }
+        return sum;
+    }
+    }
+
+
+

@@ -4,6 +4,8 @@ package tddClass;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.LinkedList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class KataTest {
@@ -153,5 +155,27 @@ public class KataTest {
         int[] array1 = {12,13,6,10};
         int[] array2 = {13,10,16,15};
         assertEquals(46,Kata.findSumOfSameElements(array1,array2));
+    }
+
+    @Test
+    public void sumOfDistinctElementsInTwoLinkedListCanBeCalculatedTest(){
+        LinkedList<Integer>linkedList1 = new LinkedList<>();
+        linkedList1.add(3); linkedList1.add(1); linkedList1.add(7); linkedList1.add(9);
+
+        LinkedList<Integer>linkedList2 = new LinkedList<>();
+        linkedList2.add(2); linkedList2.add(4); linkedList2.add(1); linkedList2.add(9); linkedList2.add(3);
+
+        assertEquals(13,Kata.findSumOfDistinctElementsInLinkedList(linkedList1,linkedList2));
+    }
+
+    @Test
+    public void sumOfSameElementsInTwoLinkedListCanBeCalculatedTest(){
+        LinkedList<Integer>linkedList1 = new LinkedList<>();
+        linkedList1.add(12); linkedList1.add(13); linkedList1.add(6); linkedList1.add(10);
+
+        LinkedList<Integer>linkedList2 = new LinkedList<>();
+        linkedList2.add(13); linkedList2.add(10); linkedList2.add(16); linkedList2.add(15);
+
+        assertEquals(46,Kata.findSumOfSameElementsInLinkedList(linkedList1,linkedList2));
     }
 }

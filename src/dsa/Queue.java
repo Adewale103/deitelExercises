@@ -2,7 +2,8 @@ package dsa;
 
 public class Queue {
     private int numberOfElements;
-    int[] elements = new int[10];
+    private int popCounter;
+    String[] elements = new String[10];
     public boolean isEmpty() {
         if(numberOfElements == 0){
             return true;
@@ -10,12 +11,22 @@ public class Queue {
         return false;
     }
 
-    public void push(int item) {
+    public void push(String item) {
+        if(numberOfElements == 10){
+            throw new ArrayIndexOutOfBoundsException("Queue is full!");
+        }
+        else {
         elements[numberOfElements] = item;
-        numberOfElements+=1;
+        numberOfElements+=1;}
     }
 
-    public int pop() {
-        return elements[numberOfElements];
+    public String pop() {
+        String poppedItem = elements[popCounter];
+        elements[popCounter] = null;
+        popCounter++;
+        return poppedItem;
+    }
+    public String peek() {
+        return elements[numberOfElements-1];
     }
 }

@@ -37,7 +37,7 @@ public class StackTest {
     }
 
     @Test
-    public void pushXandY_popY_stackShouldBeEmptyTest() {
+    public void pushXandY_popY_stackShouldNotBeEmptyTest() {
         stack.push(13);
         stack.push(5);
         stack.pop();
