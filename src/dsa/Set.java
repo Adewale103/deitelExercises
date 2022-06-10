@@ -19,6 +19,12 @@ public void add(String item){
     }
 }
 
+public void add(int index,String item){
+    if(!contains(item)){
+        set.add(index,item);
+        }
+    }
+
 public int size(){
     return set.size();
 }

@@ -12,7 +12,11 @@ public class HashMap {
     }
 
     public void put(String key, String value) {
-        if(keys.contains(key)){}
+        for (int i = 0; i < keys.size(); i++) {
+            if(key.equals(keys.get(i))){
+                values.add(i,value);
+            }
+        }
         keys.add(key);
         values.add(value);
         counter++;
@@ -26,5 +30,18 @@ public class HashMap {
             }
         }
         return null;
+    }
+    public boolean containKey(String key){
+        if(keys.contains(key)){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean containValue(String value){
+        if(values.contains(value)){
+            return true;
+        }
+        return false;
     }
 }

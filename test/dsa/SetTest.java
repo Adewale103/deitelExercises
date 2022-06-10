@@ -26,7 +26,7 @@ public class SetTest {
         assertEquals(1,set.size());
     }
     @Test
-    public void addMultipleItemsByItemTest(){
+    public void addMultipleItemsTest(){
         set.add("Feather");
         set.add("Deno");
         set.add("Plant");
@@ -42,7 +42,7 @@ public class SetTest {
         assertEquals(3,set.size());
     }
     @Test
-    public void ItemCanBeRemovedByItem(){
+    public void ItemCanBeRemovedTest(){
         set.add("Feather");
         set.add("Crop");
         set.add("Fish");
@@ -53,7 +53,7 @@ public class SetTest {
     }
 
     @Test
-    public void MultipleItemsCanBeRemovedByItem(){
+    public void MultipleItemsCanBeRemovedTest(){
         set.add("Feather");
         set.add("Crop");
         set.add("Fish");

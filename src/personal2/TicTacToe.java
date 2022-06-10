@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class TicTacToe {
     private static int row;
     private static int column;
-    private static final String player1 = "X";
-    private static final String player2 = "O";
     private static final Scanner input = new Scanner(System.in);
     private static final String[][] displayBoard = new String[3][3];
 
@@ -52,46 +50,46 @@ public class TicTacToe {
         System.out.println("Enter number between 1 and 9: ");
         try{int number = input.nextInt();
             switch (number) {
-                case 1:
+                case 1 -> {
                     row = 0;
                     column = 0;
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     row = 0;
                     column = 1;
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     row = 0;
                     column = 2;
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     row = 1;
                     column = 0;
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     row = 1;
                     column = 1;
-                    break;
-                case 6:
+                }
+                case 6 -> {
                     row = 1;
                     column = 2;
-                    break;
-                case 7:
+                }
+                case 7 -> {
                     row = 2;
                     column = 0;
-                    break;
-                case 8:
+                }
+                case 8 -> {
                     row = 2;
                     column = 1;
-                    break;
-                case 9:
+                }
+                case 9 -> {
                     row = 2;
                     column = 2;
-                    break;
-                default:
+                }
+                default -> {
                     row = -1;
                     column = -1;
-                    break;
+                }
             }
 
         if(!displayBoard[row][column].equals(" ")){
@@ -165,6 +163,8 @@ public class TicTacToe {
             System.out.println("Nobody won! Game over!");
             showDisplayBoard();
             System.exit(0);
+
+
         }
     }
 

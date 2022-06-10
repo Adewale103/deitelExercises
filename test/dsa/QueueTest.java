@@ -25,53 +25,80 @@ public class QueueTest {
 
     @Test
     public void pushOneElementQueueIsNotEmptyTest() {
-        queue.push("Rice");
+        queue.enqueue("Rice");
         assertFalse(queue.isEmpty());
     }
 
     @Test
     public void pushX_popX_elementShouldBeXTest() {
-        queue.push("Beans");
-        assertEquals("Beans" , queue.pop());
+        queue.enqueue("Beans");
+        assertEquals("Beans" , queue.dequeue());
 
     }
 
     @Test
     public void pushXandY_popXTest() {
-        queue.push("Beans");
-        queue.push("Yam");
-        assertEquals("Beans" , queue.pop());
+        queue.enqueue("Beans");
+        queue.enqueue("Yam");
+        assertEquals("Beans" , queue.dequeue());
 
     }
 
     @Test
     public void pushXandY_popXandY_elementIsXThenYTest() {
-        queue.push("Beans");
-        queue.push("Yam");
-        assertEquals("Beans" , queue.pop());
-        assertEquals("Yam" , queue.pop());
+        queue.enqueue("Beans");
+        queue.enqueue("Yam");
+        assertEquals("Beans" , queue.dequeue());
+        assertEquals("Yam" , queue.dequeue());
     }
 
     @Test
     public void pushXandY_peekY_elementReturnYTest() {
-        queue.push("Beans");
-        queue.push("Yam");
+        queue.enqueue("Beans");
+        queue.enqueue("Yam");
         assertEquals("Yam" , queue.peek());
     }
 
     @Test
     public void testThatElementsPushedCanNotBeBeyondArrayLength() {
-        queue.push("Beans");
-        queue.push("Yam");
-        queue.push("milk");
-        queue.push("eggs");
-        queue.push("jug");
-        queue.push("plates");
-        queue.push("car");
-        queue.push("ink");
-        queue.push("board");
-        queue.push("learn");
-        assertEquals("learn" , queue.peek());
-        assertThrows(ArrayIndexOutOfBoundsException.class, () -> queue.push("plkhjg"));
+        queue.enqueue("Beans");
+        queue.enqueue("Yam");
+        queue.enqueue("milk");
+        queue.enqueue("eggs");
+        queue.enqueue("jug");
+        queue.enqueue("plates");
+        queue.enqueue("car");
+        queue.enqueue("ink");
+        queue.enqueue("board");
+        queue.enqueue("learn");
+        assertEquals("Beans" , queue.peek());
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> queue.enqueue("plkhjg"));
+    }
+
+    @Test
+    public void testThatElementsCanShiftIfArrayIsFullAndNullElementsExist(){
+        queue.enqueue("Beans");
+        queue.enqueue("Yam");
+        queue.enqueue("milk");
+        queue.enqueue("eggs");
+        queue.enqueue("jug");
+        queue.enqueue("plates");
+        queue.enqueue("car");
+        queue.enqueue("ink");
+        assertEquals("Beans" , queue.peek());
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        queue.display();
+        assertEquals("eggs" , queue.peek());
+        queue.enqueue("biro");
+        queue.enqueue("pencil");
+        queue.enqueue("eraser");
+        queue.display();
+        queue.enqueue("crayon");
+        queue.enqueue("love");
+        assertEquals("eggs" , queue.peek());
+        queue.display();
+
     }
 }

@@ -41,18 +41,18 @@ public class Turtle {
         else if(currentDirection.equals(NORTH)){turn(WEST);}
     }
 
-    public void move(int sides, SketchPad sketchPad) {
+    public void move(int steps, SketchPad sketchPad) {
         if(isDown()){
-        if(currentDirection.equals(EAST)){writeOnColumnBy(sides, sketchPad);}
-        if(currentDirection.equals(SOUTH)){writeOnRowBy(sides, sketchPad);}
-        if(currentDirection.equals(WEST)){backWriteOnColumnBy(sides, sketchPad);}
-        if(currentDirection.equals(NORTH)){backWriteOnRowBy(sides,sketchPad);}
+        if(currentDirection.equals(EAST)){writeOnColumnBy(steps, sketchPad);}
+        if(currentDirection.equals(SOUTH)){writeOnRowBy(steps, sketchPad);}
+        if(currentDirection.equals(WEST)){backWriteOnColumnBy(steps, sketchPad);}
+        if(currentDirection.equals(NORTH)){backWriteOnRowBy(steps,sketchPad);}
         }
 
-        if(currentDirection.equals(EAST)){increaseColumnBy(sides);}
-        if(currentDirection.equals(SOUTH)){increaseRowBy(sides);}
-        if(currentDirection.equals(WEST)){decreaseColumnBy(sides);}
-        if(currentDirection.equals(NORTH)){decreaseRowBy(sides);}
+        if(currentDirection.equals(EAST)){increaseColumnBy(steps, sketchPad);}
+        if(currentDirection.equals(SOUTH)){increaseRowBy(steps, sketchPad);}
+        if(currentDirection.equals(WEST)){decreaseColumnBy(steps);}
+        if(currentDirection.equals(NORTH)){decreaseRowBy(steps);}
         }
 
     private void backWriteOnRowBy(int steps, SketchPad sketchPad) {
@@ -60,8 +60,12 @@ public class Turtle {
         int row = currentPosition.getRow();
         int column = currentPosition.getColumn();
         steps = steps - row;
+        if(steps < 1){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else{
         for (int i = steps-1; i <= row; i++) {
-            floor[i][column] = 1;
+            floor[i][column] = 1;}
         }
     }
 
@@ -70,8 +74,12 @@ public class Turtle {
         int row = currentPosition.getRow();
         int column = currentPosition.getColumn();
         steps = steps - column;
+        if(steps < 1){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else{
         for (int i = steps-1; i <= column; i++) {
-            floor[row][i] = 1;
+            floor[row][i] = 1;}
         }
     }
 
@@ -80,8 +88,12 @@ public class Turtle {
         int row = currentPosition.getRow();
         int column = currentPosition.getColumn();
         steps = steps + row;
+        if(steps > sketchPad.getRowSize()){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else{
         for (int i = row; i < steps; i++) {
-            floor[i][column] = 1;
+            floor[i][column] = 1;}
         }
     }
     private void writeOnColumnBy(int steps, SketchPad sketchPad) {
@@ -89,30 +101,57 @@ public class Turtle {
         int row = currentPosition.getRow();
         int column = currentPosition.getColumn();
         steps = steps + column;
-        for (int i = column; i < steps; i++) {
-            floor[row][i] = 1;
+        if(steps > sketchPad.getColumnSize()){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else
+        {for (int i = column; i < steps; i++) {
+            floor[row][i] = 1;}
         }
 
     }
 
-    private void decreaseRowBy(int sides) {
-        currentPosition.setRow(currentPosition.getRow() - (sides-1));
+    private void decreaseRowBy(int steps) {
+        int row = currentPosition.getRow() - (steps-1);
+        if(row < 0){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else{
+        currentPosition.setRow(row);}
     }
 
     private void decreaseColumnBy(int steps) {
-        currentPosition.setColumn(currentPosition.getColumn() - (steps-1));
+        int column = currentPosition.getColumn() - (steps-1);
+        if(column < 0){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else{
+        currentPosition.setColumn(column);}
     }
 
-    private void increaseRowBy(int steps) {
-        currentPosition.setRow(currentPosition.getRow() + (steps-1));
+    private void increaseRowBy(int steps, SketchPad sketchPad) {
+        int row = currentPosition.getRow() + (steps-1);
+        if(row +1 > sketchPad.getRowSize()){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else{
+        currentPosition.setRow(row);}
     }
 
-    private void increaseColumnBy(int steps) {
-        currentPosition.setColumn(currentPosition.getColumn() + (steps-1));
+    private void increaseColumnBy(int steps, SketchPad sketchPad) {
+        int column = currentPosition.getColumn() + (steps-1);
+        if(column + 1 > sketchPad.getColumnSize()){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else{
+        currentPosition.setColumn(column);}
     }
 
     public Position getCurrentPosition() {
         return currentPosition;
+    }
+    public void displaySketchPad(SketchPad sketchPad){
+        System.out.println(sketchPad.toString());;
     }
 
 }

@@ -219,5 +219,13 @@ public class TurtleTest {
         assertEquals(new Position(0,0), turtle.getCurrentPosition());
 
     }
+    @Test
+    public void turtleCanNotMoveBeyondTheSketchPadWallFacingEast(){
+        turtle.move(5,sketchPad);
+        assertThrows(ArrayIndexOutOfBoundsException.class, ()-> turtle.move(2,sketchPad));
+
+    }
+
+
 
 }

@@ -3,8 +3,7 @@ package dsa;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class HashMapTest {
@@ -35,7 +34,7 @@ public class HashMapTest {
         assertEquals(3,map.size());
     }
     @Test
-    public void KeyCanFindValueTest(){
+    public void keyCanFindValueTest(){
         map.put("name","wale");
         map.put("age","30");
         map.put("school","semicolon");
@@ -44,11 +43,28 @@ public class HashMapTest {
     }
 
     @Test
-    public void AddingExistingKeyCanUpdateOnlyValueTest(){
+    public void addingExistingKeyCanUpdateOnlyValueTest(){
         map.put("name","wale");
         map.put("age","30");
         map.put("age","25");
         String value = map.getValue("age");
         assertEquals("25",value);
     }
+
+    @Test
+    public void testThatKeyExists(){
+        map.put("name","wale");
+        map.put("age","30");
+        boolean key = map.containKey("age");
+        assertTrue(key);
+    }
+
+    @Test
+    public void testThatValueExists(){
+        map.put("name","wale");
+        map.put("age","30");
+        boolean value = map.containValue("wale");
+        assertTrue(value);
+    }
+
 }

@@ -2,9 +2,13 @@ package turtle;
 
 public class SketchPad {
     private int[][] floor;
+    private int rowSize;
+    private int columnSize;
 
     public SketchPad(int row, int column) {
-       floor = new int[row][column];
+        rowSize = row;
+        columnSize = column;
+        floor = new int[row][column];
     }
     @Override
     public String toString(){
@@ -22,4 +26,15 @@ public class SketchPad {
     public int[][] getFloor() {
         return floor;
     }
+
+    public int getRowSize(){
+        return rowSize;
+    }
+
+    public int getColumnSize(){
+        return columnSize;
+    }
+
+
+
 }

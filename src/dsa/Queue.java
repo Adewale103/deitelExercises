@@ -1,5 +1,7 @@
 package dsa;
 
+import java.util.Arrays;
+
 public class Queue {
     private int numberOfElements;
     private int popCounter;
@@ -11,22 +13,48 @@ public class Queue {
         return false;
     }
 
-    public void push(String item) {
+    public void enqueue(String item) {
+        int shiftCounter = 0;
         if(numberOfElements == 10){
-            throw new ArrayIndexOutOfBoundsException("Queue is full!");
+            for (int i = 0; i < elements.length-1; i++) {
+                if(elements[i] == null){
+                    shiftCounter++;
+                }
+            }
+            for (int i = 0; i < elements.length-shiftCounter; i++) {
+                elements[i] = elements[shiftCounter+i];
+            }
+            if(shiftCounter>0){
+                numberOfElements = numberOfElements - shiftCounter;
+                elements[numberOfElements] = item;
+                numberOfElements+=1;
+            }
+            else{throw new ArrayIndexOutOfBoundsException("Queue is full!");}
+
         }
-        else {
+        else{
         elements[numberOfElements] = item;
         numberOfElements+=1;}
     }
 
-    public String pop() {
+    public String dequeue() {
         String poppedItem = elements[popCounter];
         elements[popCounter] = null;
         popCounter++;
         return poppedItem;
     }
     public String peek() {
-        return elements[numberOfElements-1];
+        String first_value = "";
+        if (popCounter > 0 && numberOfElements < 10){first_value = elements[popCounter];}
+        else first_value = elements[0];
+        return first_value;
+    }
+
+    public void display(){
+        System.out.println(Arrays.toString(elements));
+    }
+
+    public int size(){
+        return elements.length - popCounter;
     }
 }
