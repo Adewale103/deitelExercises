@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class MyersBriggsQuestionnaire {
     static Scanner input = new Scanner(System.in);
+    static String option;
     static int countA1 = 0;
     static int countA2 = 0;
     static int countA3 = 0;
@@ -67,7 +68,7 @@ public class MyersBriggsQuestionnaire {
                 (1)
                 A.-> expend energy, enjoy groups
                 B.-> conserve energy, enjoy one-on-one""");
-        String option = input.nextLine().toUpperCase();
+        option = input.nextLine().toUpperCase();
         if (option.equals("A")) {
             countA1 += 1;
         } else if (option.equals("B")) {
@@ -80,10 +81,10 @@ public class MyersBriggsQuestionnaire {
                 (2)
                 A.-> interpret literally
                 B.-> look for meaning and possibilities""");
-        String option2 = input.nextLine().toUpperCase();
-        if (option2.equals("A")) {
+        option = input.nextLine().toUpperCase();
+        if (option.equals("A")) {
             countA2 += 1;
-        } else if (option2.equals("B")) {
+        } else if (option.equals("B")) {
             countB2 += 1;
         } else Question2();
     }

@@ -1,4 +1,4 @@
-package eBanking.class2;
+package class2;
 
 public class Time {
     private int seconds;

@@ -1,4 +1,4 @@
-package dsa.diaryPackage;
+package diaryPackage;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

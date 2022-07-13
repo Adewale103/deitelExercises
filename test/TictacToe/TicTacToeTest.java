@@ -1,8 +1,8 @@
-package Assignments;
+package TictacToe;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static Assignments.State.*;
+import static TictacToe.State.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TicTacToeTest {
@@ -39,7 +39,7 @@ public class TicTacToeTest {
     @Test
     public void playerCanMakeMoveTest() {
         Player player1 = new Player(1, X);
-     ticTacToe.makeMove(player1,1,1);
+     ticTacToe.makeMove(player1,5);
         State[][] expected = {
                 {E, E, E},
                 {E, X, E},
@@ -51,8 +51,8 @@ public class TicTacToeTest {
     public void twoPlayersCanMakeMoveTest() {
         Player player1 = new Player(1, X);
         Player player2 = new Player(2, O);
-        ticTacToe.makeMove(player1,1,1);
-        ticTacToe.makeMove(player2,0,1);
+        ticTacToe.makeMove(player1,5);
+        ticTacToe.makeMove(player2,2);
         State[][] expected = {
                 {E, O, E},
                 {E, X, E},
@@ -64,12 +64,12 @@ public class TicTacToeTest {
     public void twoPlayersCanMakeMultipleMovesTest() {
         Player player1 = new Player(1, X);
         Player player2 = new Player(2, O);
-        ticTacToe.makeMove(player1,1,1);
-        ticTacToe.makeMove(player2,0,1);
-        ticTacToe.makeMove(player1,2,2);
-        ticTacToe.makeMove(player2,1,2);
-        ticTacToe.makeMove(player1,2,1);
-        ticTacToe.makeMove(player2,0,0);
+        ticTacToe.makeMove(player1,5);
+        ticTacToe.makeMove(player2,2);
+        ticTacToe.makeMove(player1,9);
+        ticTacToe.makeMove(player2,6);
+        ticTacToe.makeMove(player1,8);
+        ticTacToe.makeMove(player2,1);
         State[][] expected = {
                 {O, O, E},
                 {E, X, O},
@@ -81,12 +81,12 @@ public class TicTacToeTest {
     public void boardCanBeCheckedIfItIsFullTest() {
         Player player1 = new Player(1, X);
         Player player2 = new Player(2, O);
-        ticTacToe.makeMove(player1,1,1);
-        ticTacToe.makeMove(player2,0,1);
-        ticTacToe.makeMove(player1,2,2);
-        ticTacToe.makeMove(player2,1,2);
-        ticTacToe.makeMove(player1,2,1);
-        ticTacToe.makeMove(player2,0,0);
+        ticTacToe.makeMove(player1,5);
+        ticTacToe.makeMove(player2,2);
+        ticTacToe.makeMove(player1,9);
+        ticTacToe.makeMove(player2,6);
+        ticTacToe.makeMove(player1,8);
+        ticTacToe.makeMove(player2,1);
        assertFalse(ticTacToe.isBoardFull());
     }
 
@@ -94,12 +94,12 @@ public class TicTacToeTest {
     public void secondPlayerCanWinTestTest() {
         Player player1 = new Player(1, X);
         Player player2 = new Player(2, O);
-        ticTacToe.makeMove(player1,1,2);
-        ticTacToe.makeMove(player2,2,2);
-        ticTacToe.makeMove(player1,0,1);
-        ticTacToe.makeMove(player2,1,1);
-        ticTacToe.makeMove(player1,2,1);
-        ticTacToe.makeMove(player2,0,0);
+        ticTacToe.makeMove(player1,6);
+        ticTacToe.makeMove(player2,9);
+        ticTacToe.makeMove(player1,2);
+        ticTacToe.makeMove(player2,5);
+        ticTacToe.makeMove(player1,8);
+        ticTacToe.makeMove(player2,1);
         State[][] expected = {
                 {O, X, E},
                 {E, O, X},
@@ -112,12 +112,12 @@ public class TicTacToeTest {
     public void firstPlayerCanWinTestTest() {
         Player player1 = new Player(1, X);
         Player player2 = new Player(2, O);
-        ticTacToe.makeMove(player1,0,0);
-        ticTacToe.makeMove(player2,1,2);
-        ticTacToe.makeMove(player1,0,1);
-        ticTacToe.makeMove(player2,1,1);
-        ticTacToe.makeMove(player1,0,2);
-        ticTacToe.makeMove(player2,2,2);
+        ticTacToe.makeMove(player1,1);
+        ticTacToe.makeMove(player2,6);
+        ticTacToe.makeMove(player1,2);
+        ticTacToe.makeMove(player2,5);
+        ticTacToe.makeMove(player1,3);
+        ticTacToe.makeMove(player2,9);
         State[][] expected = {
                 {X, X, X},
                 {E, O, O},

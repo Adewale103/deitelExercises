@@ -1,4 +1,4 @@
-package Assignments;
+package TictacToe;
 
 public class Player {
     private int id;
@@ -16,7 +16,9 @@ public class Player {
         return tag;
     }
 
-    public int getId() {
-        return id;
+
+    @Override
+    public String toString() {
+        return String.format("Player %d",id);
     }
 }

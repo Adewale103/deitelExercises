@@ -1,7 +1,6 @@
-package Assignments;
+package TictacToe;
 
 public class Result {
-    private boolean isWin;
 
     public boolean check(Player player, State[][] board) {
         if(checkForRows(player,board,0)){return true;}

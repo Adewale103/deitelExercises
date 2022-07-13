@@ -1,6 +1,5 @@
-package Assignments;
+package TictacToe;
 
 public enum State {
     X,O,E;
-
 }

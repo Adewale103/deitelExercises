@@ -1,5 +1,4 @@
 package dsa;
-
 public class ArrayList {
     private int counter;
     private int length;

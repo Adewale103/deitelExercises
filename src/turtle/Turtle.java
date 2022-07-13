@@ -7,6 +7,7 @@ public class Turtle {
     Position currentPosition = new Position(0,0);
     private Direction currentDirection = EAST;
 
+
     public boolean isDown() {
         return pen.isDown();
     }

@@ -1,11 +1,15 @@
 package personal2;
 
+import java.security.SecureRandom;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class TicTacToe {
+public class TicTacToeWithComputer {
+    private static final SecureRandom random = new SecureRandom();
     private static int row;
     private static int column;
+    private static String playerTag = "X";
+    private static String computerTag = " ";
     private static final Scanner input = new Scanner(System.in);
     private static final String[][] displayBoard = new String[3][3];
 
@@ -17,14 +21,37 @@ public class TicTacToe {
     private static void playGame() {
         for (int i = 0; i <= 9; i++) {
             checkIfBoardIsFull();
-            play(1, "X");
+            humanPlay();
             checkIfBoardIsFull();
             showDisplayBoard();
-            play(2, "O");
+            computerPlay();
             checkIfBoardIsFull();
             showDisplayBoard();
 
         }
+    }
+    private static void pickTag(){
+        System.out.println("Welcome, pick a tag! X or 0");
+        String tag = input.nextLine();
+        switch (tag.toUpperCase()) {
+            case "X" -> {
+                playerTag = "X";
+                computerTag = "O";
+                System.out.println("You --> X");
+                System.out.println("Computer --> O");
+            }
+            case "O" -> {
+                playerTag = "O";
+                computerTag = "X";
+                System.out.println("You --> O");
+                System.out.println("Computer --> X");
+            }
+            default -> {
+                System.out.println("Wrong Input! Let's start all over!");
+                pickTag();
+            }
+        }
+
     }
     public static void clearDisplayBoard(){
         for (int i = 0; i <= 2; i++) {
@@ -32,8 +59,7 @@ public class TicTacToe {
                 displayBoard[i][j] = " ";
             }
         }
-        System.out.println("Player 1 --> X");
-        System.out.println("Player 2 --> O");
+        pickTag();
     }
 
     public static void showDisplayBoard(){
@@ -45,10 +71,8 @@ public class TicTacToe {
         }
     }
 
-    public static void play(int player, String tag){
-        System.out.printf("Player %d turn: ",player);
-        System.out.println("Enter number between 1 and 9: ");
-        try{int number = input.nextInt();
+    public static void play(String player, String tag, int number){
+        try{
             switch (number) {
                 case 1 -> {
                     row = 0;
@@ -94,7 +118,12 @@ public class TicTacToe {
 
             if(!displayBoard[row][column].equals(" ")){
                 System.out.println("Already filled, play again");
-                play(player,tag);
+                if(player.equals("Computer")){number = random.nextInt(1,10);}
+                else{
+                    System.out.println("Enter another number!");
+                    number = input.nextInt();
+                }
+                play(player,tag,number);
             }
 
             else displayBoard[row][column] = tag;
@@ -102,16 +131,37 @@ public class TicTacToe {
 
         catch (ArrayIndexOutOfBoundsException e){
             System.out.println("Out of range! Play again!");
-            play(player, tag);
+                System.out.println("Enter another number!");
+                number = input.nextInt();
+            play(player, tag,number);
         }
         catch (InputMismatchException e){
             input.nextLine();
             System.out.println("Invalid input! Play again");
-            play(player, tag);
+            if(player.equals("Computer")){number = random.nextInt(1,10);}
+            else{
+                System.out.println("Enter another number!");
+                number = input.nextInt();
+            }
+            play(player, tag,number);
         }
 
     }
-    public static void check(int player, String tag){
+    public static void humanPlay(){
+        System.out.println("Your turn");
+        System.out.println("Enter number between 1 and 9: ");
+        int number = input.nextInt();
+        play("You",playerTag,number);
+    }
+
+    public static void computerPlay(){
+        System.out.println("Computer turn");
+        System.out.println("Enter number between 1 and 9: ");
+        int number = random.nextInt(1,10);
+        play("Computer",computerTag,number);
+
+    }
+    public static void check(String player, String tag){
         validatorForRow(0,tag,player);
         validatorForRow(1,tag,player);
         validatorForRow(2,tag,player);
@@ -122,30 +172,30 @@ public class TicTacToe {
         validatorForDiagonal2(tag,player);
     }
 
-    public static void validatorForRow(int row,String tag, int player){
+    public static void validatorForRow(int row,String tag, String player){
         if (displayBoard[row][0].equals(tag) && displayBoard[row][1].equals(tag) && displayBoard[row][2].equals(tag)){
-            System.out.println("player "+player +" wins!");
+            System.out.println(player +" won!");
             showDisplayBoard();
             System.exit(0);
         }
     }
-    public static void validatorForColumn(int column,String tag, int player){
+    public static void validatorForColumn(int column,String tag, String player){
         if (displayBoard[0][column].equals(tag) && displayBoard[1][column].equals(tag) && displayBoard[2][column].equals(tag)){
-            System.out.println("player "+player +" wins!");
+            System.out.println(player +" won!");
             showDisplayBoard();
             System.exit(0);
         }
     }
-    public static void validatorForDiagonal1(String tag, int player){
+    public static void validatorForDiagonal1(String tag, String player){
         if (displayBoard[0][0].equals(tag) && displayBoard[1][1].equals(tag) && displayBoard[2][2].equals(tag)){
-            System.out.println("player "+player +" wins!");
+            System.out.println(player +" won!");
             showDisplayBoard();
             System.exit(0);
         }
     }
-    public static void validatorForDiagonal2(String tag, int player){
+    public static void validatorForDiagonal2(String tag, String player){
         if (displayBoard[0][2].equals(tag) && displayBoard[1][1].equals(tag) && displayBoard[2][0].equals(tag)){
-            System.out.println("player "+player +" wins!");
+            System.out.println(player +" won!");
             showDisplayBoard();
             System.exit(0);
         }

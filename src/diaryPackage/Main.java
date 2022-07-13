@@ -1,4 +1,4 @@
-package dsa.diaryPackage;
+package diaryPackage;
 
 import java.util.Scanner;
 
