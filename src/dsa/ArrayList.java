@@ -40,6 +40,7 @@ public class ArrayList {
         for (int i = 0; i < arrayList.length ; i++) {
             arrayList1[i] = arrayList[i];
         }
+
         arrayList = arrayList1;
     }
 

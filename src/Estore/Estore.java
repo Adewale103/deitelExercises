@@ -1,7 +1,7 @@
 package Estore;
 
 public class Estore {
-    Customers customers = new Customers();
-    Sellers sellers = new Sellers();
-    Admin admin = new Admin();
+    private Customers[] customers;
+    private Sellers[] seller;
+    private Admin admin;
 }
