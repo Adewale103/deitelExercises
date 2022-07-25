@@ -31,6 +31,15 @@ public class HashMap {
         }
         return null;
     }
+    public void remove(String key){
+        for (int i = 0; i < keys.size(); i++) {
+            if(key.equals(keys.get(i))){
+                values.remove(values.get(i));
+                keys.remove(key);
+            }
+        }
+
+    }
     public boolean containKey(String key){
         if(keys.contains(key)){
             return true;
